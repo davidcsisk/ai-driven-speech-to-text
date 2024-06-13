@@ -1,0 +1,31 @@
+Test speech-to-text transcription, using OpenAI Whisper-1 model.
+
+https://librivox.org/a-popular-history-of-the-art-of-music-by-w-s-b-mathews/
+
+00 - PREFACE AND INTRODUCTION	Tony Oliva  00:21:15
+01 - MUSIC AMONG THE ANCIENT EGYPTIANS	Tony Oliva   00:17:16
+02 - MUSIC AMONG THE HEBREWS AND ASSYRIANS.	Tony Oliva   00:11:24
+03 - MUSIC AMONG THE ANCIENT GREEKS.	Tony Oliva    00:46:07
+
+Note: OpenAI Whisper-1 model only allows 25Mb or smaller audio file.  Audacity was used to reduce the sample rate of chapt 03 from 44.1KHz to 16KHz.
+      This worked fine since the audio content is voice.
+
+Total time of audio: 1:36:02
+
+
+python .\transcribe-audio-using-openai-whisper.py .\popularhistoryoftheartofmusic_00_mathews.mp3 > .\popular-history-of-the-art-of-music-00-matthews.txt
+charge: $0.13
+
+python .\transcribe-audio-using-openai-whisper.py .\popularhistoryoftheartofmusic_01_mathews.mp3 > .\popular-history-of-the-art-of-music-01-matthews.txt
+charge: $0.11
+
+python .\transcribe-audio-using-openai-whisper.py .\popularhistoryoftheartofmusic_02_mathews.mp3 > .\popular-history-of-the-art-of-music-02-matthews.txt
+charge: $0.06
+
+python .\transcribe-audio-using-openai-whisper.py .\popularhistoryoftheartofmusic_03_mathews_reduced-sample-rate_16KHz.mp3 > .\popular-history-of-the-art-of-music-03-matthews_reduced-sample-rate_16KHz.txt
+charge: $0.28
+
+Total charge: $0.58
+Total processing time was < 10 minutes
+
+Next steps:  Repeat test with HuggingFace suno/bark model.  No per request charges, but need infrastructure for model.
